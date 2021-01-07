@@ -5,12 +5,27 @@ import Content from './Content';
 
 class NoteContainer extends Component {
   render() {
+    const { notes, selectedNote, handleClick, createNote, handleClickEdit, editNote, handleEditSave, handleCancelEdit, handleSearch, filteredNotes, deleteNote } = this.props
     return (
       <Fragment>
-        <Search />
+        <Search 
+        handleSearch={handleSearch}
+        />
         <div className='container'>
-          <Sidebar />
-          <Content />
+          <Sidebar 
+          notes={notes}
+          handleClick={handleClick}
+          createNote={createNote}
+          filteredNotes={filteredNotes}
+          />
+          <Content 
+          selectedNote={selectedNote}
+          handleClickEdit={handleClickEdit}
+          editNote={editNote}
+          handleEditSave={handleEditSave}
+          handleCancelEdit={handleCancelEdit}
+          deleteNote={deleteNote}
+          />
         </div>
       </Fragment>
     );

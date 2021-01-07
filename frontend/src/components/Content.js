@@ -11,15 +11,36 @@ import Instructions from './Instructions';
           refactor to get this Content component to work.
 */
 class Content extends Component {
+  
   renderContent = () => {
-    if (false) {
-      return <NoteEditor />;
-    } else if (false) {
-      return <NoteViewer />;
+    const { selectedNote, handleClickEdit, editNote, handleEditSave, handleCancelEdit, deleteNote } = this.props
+    if (editNote) {
+      return <NoteEditor 
+      editNote={editNote}
+      selectedNote={selectedNote}
+      handleEditSave={handleEditSave}
+      handleCancelEdit={handleCancelEdit}
+      />
+    } else if (selectedNote) {
+      return <NoteViewer 
+      selectedNote={selectedNote}
+      handleClickEdit={handleClickEdit}
+      deleteNote={deleteNote}
+      />
     } else {
-      return <Instructions />;
+      return <Instructions />
     }
   }
+
+  // renderContent = () => {
+  //   if (false) {
+  //     return <NoteEditor />;
+  //   } else if (false) {
+  //     return <NoteViewer />;
+  //   } else {
+  //     return <Instructions />;
+  //   }
+  // }
 
   render() {
     return (

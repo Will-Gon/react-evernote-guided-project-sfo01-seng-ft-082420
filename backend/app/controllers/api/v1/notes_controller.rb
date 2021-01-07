@@ -17,6 +17,7 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def destroy
+    #byebug
     noteId = @note.id
     @note.destroy
     render json: {message:"Zap! Note deleted", noteId:noteId}

@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NoteList from './NoteList';
 
-class Sidebar extends Component {
-  render() {
+const Sidebar = (props) => {
+
+  const { notes, handleClick, createNote, filteredNotes } = props
+
     return (
       <div className='master-detail-element sidebar'>
-        <NoteList />
-        <button>New</button>
+        {/* <button onClick={(e) => createNote(e)}>Add a note...</button> */}
+        <NoteList 
+        notes={notes}
+        handleClick={handleClick}
+        filteredNotes={filteredNotes}/>
+        <button onClick={(e) => createNote(e)}>New</button>
       </div>
     );
-  }
 }
+
 
 export default Sidebar;

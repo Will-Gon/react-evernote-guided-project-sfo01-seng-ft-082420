@@ -1,9 +1,9 @@
 import React from 'react';
 
-const NoteItem = (props) => (
-  <li>
-    <h2>Title</h2>
-    <p>Caption...</p>
+const NoteItem = ({note, handleClick}) => (
+  <li onClick={() => handleClick(note)}>
+    <h2>{note.title}</h2>
+    <p>{note.body.slice(0, 20) + ('...')}</p>
   </li>
 );
 
