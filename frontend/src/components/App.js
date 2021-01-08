@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-// import Instructions from './Instructions';
 import NoteContainer from './NoteContainer';
 
 const URL = 'http://localhost:3000/api/v1/notes'
@@ -20,7 +19,6 @@ class App extends Component {
     .then(notes => {
       this.setState({
         notes
-        //notes: notes
       })
     })
   }
